@@ -1,6 +1,15 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import Providers from "@/providers/AuthProviders";
+import { QueryClientProvider } from "@tanstack/react-query";
+import { queryClient } from "@/lib/QueryClientProvider";
+import { Toaster } from "@/components/ui/toaster"
+
+
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,7 +37,19 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+      <QueryClientProvider client={queryClient}>
+      <Providers>
+      <Navbar/>
+      <main className="flex flex-col min-h-[calc(100vh-8rem-1px)]">
+      <div className="flex-1 flex flex-col w-full h-full p-0 m-0">
+      {children}
+      </div>
+      <Toaster />
+
+      </main>
+      </Providers>
+      </QueryClientProvider>
+        <Footer/>
       </body>
     </html>
   );
