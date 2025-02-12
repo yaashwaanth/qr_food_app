@@ -14,6 +14,8 @@ pnpm dev
 bun dev
 ```
 
+### ENV Variables
+
 ```bash
 
 NEXT_PUBLIC_SUPABASE_URL =
@@ -21,7 +23,11 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY =
 NEXTAUTH_URL =
 NEXTAUTH_SECRET =
 
-## For google auth
+```
+
+### For google auth
+
+```bash
 
 GOOGLE_ID =
 GOOGLE_SECRET =
@@ -29,7 +35,9 @@ GOOGLE_SECRET =
 DATABASE_URL =
 
 AUTH_SECRET =
-
+```
+### For AWS S3
+```bash
 ## Aws  S3
 AWS_BUCKET_NAME =
 AWS_BUCKET_REGION =
